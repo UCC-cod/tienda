@@ -2,6 +2,7 @@ package com.example.JPA.entities;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class Fabricante {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int codigo;
     @Column
+    @NonNull
     private String nombre;
     @OneToMany(mappedBy = "fabricante", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonManagedReference
